@@ -9,6 +9,7 @@ import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis } from "recharts";
 import { Archive, CalendarDays, Check, ChevronLeft, ChevronRight, CircleDollarSign, History, Home, Plus, Sparkles, Target, TrendingUp } from "lucide-react";
 import { Contribution, Goal, MILESTONES, SavingFrequency, inr, plan, savingMetrics, whatIf } from "@/lib/calc";
 import { buildCalendarPeriods, CalendarStatus, CalendarUnit } from "@/lib/calendar";
+import { createSavingsInsight } from "@/lib/insights";
 import { type Session } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase";
 
@@ -123,7 +124,7 @@ function LoginScreen({ configured }: { configured: boolean }) {
       const { error: authError } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: window.location.origin,
+          redirectTo: window.location.href,
           queryParams: { prompt: "select_account" },
         },
       });
@@ -291,25 +292,17 @@ function SavingsApp({ userId, userEmail, onSignOut }: { userId: string; userEmai
     setPlanText("");
     setError("");
     try {
-      const response = await fetch("/api/insights", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          goal: {
-            name: selected.name,
-            target: Number(selected.target_amount),
-            saved: selectedSaved,
-            date: selected.target_date,
-            monthlyRate: metrics.monthlyRate,
-            savingAmount: Number(selected.saving_amount ?? 0),
-            savingFrequency: selected.saving_frequency ?? "monthly",
-          },
-        }),
-      });
-      const result = await response.json();
-      setPlanText(result.text ?? result.error ?? "A plan could not be generated right now.");
+      setPlanText(createSavingsInsight({
+        name: selected.name,
+        target: Number(selected.target_amount),
+        saved: selectedSaved,
+        date: selected.target_date,
+        monthlyRate: metrics.monthlyRate,
+        savingAmount: Number(selected.saving_amount ?? 0),
+        savingFrequency: selected.saving_frequency ?? "monthly",
+      }));
     } catch {
-      setPlanText("The savings plan service is unavailable. Please try again.");
+      setPlanText("A savings plan could not be generated right now.");
     } finally {
       setPlanBusy(false);
     }
@@ -344,7 +337,7 @@ function SavingsApp({ userId, userEmail, onSignOut }: { userId: string; userEmai
       <nav className="mt-7 flex gap-1 overflow-x-auto border-b border-line" aria-label="Main navigation">
         {([
           ["dashboard", "Dashboard", Home],
-          ["plan", "AI plan", Sparkles],
+          ["plan", "Plan", Sparkles],
           ["progress", "Progress", TrendingUp],
           ["calendar", "Calendar", CalendarDays],
           ["history", "History", History],
