@@ -69,7 +69,7 @@ http://localhost:3000
 ## 📄 Documents
 
 
-https://drive.google.com/drive/folders/1KL8nBPmUCM-NLtRSmxbrCCyIt3Ylo7PJ
+https://drive.google.com/file/d/15zahcF6vhjHP82XBinusfNFfg-gO1cKy/view?usp=sharing
 
 
 ## 📁 Project Structure
