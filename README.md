@@ -14,20 +14,6 @@ View the deployed application:
 
 https://saveiq-ai-zeta.vercel.app
 
-##  Features
-
-- Create and manage multiple saving goals
-- Set target amount and deadline
-- Track savings contributions
-- Calculate required daily, weekly, and monthly savings
-- Monitor goal progress
-- Interactive savings analytics
-- AI-powered saving insights
-- What-If savings simulator
-- Milestones and achievements
-- Savings history
-- Responsive design for mobile and desktop
-- Secure authentication using Supabase
 
 ## 🛠️ Tech Stack
 
@@ -65,9 +51,9 @@ npm install
 Create a `.env.local` file and add your Supabase and Gemini API credentials:
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-GEMINI_API_KEY=your_gemini_api_key
+NEXT_PUBLIC_SUPABASE_URL=https://oynlblpnqxnxhuteixef.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_jWhflUsNDyh3JTDD6ruVxg_wKoWCP0R
+
 ```
 
 ### 4. Run the application
@@ -82,9 +68,8 @@ http://localhost:3000
 
 ## 📄 Documents
 
-### 
 
-[View SaveIQ AI Project Documentation](./docs/samruddhi.skillwallet.pdf)
+
 
 
 ## 📁 Project Structure
