@@ -1,8 +1,8 @@
-# 💰 SaveIQ AI – Saving Goals Tracker
 
-![SaveIQ AI Banner](https://via.placeholder.com/1200x300?text=SaveIQ+AI)
 
-## 🚀 About SaveIQ AI
+
+
+##  About SaveIQ AI
 
 SaveIQ AI is an AI-powered savings goal tracker that helps users create financial goals, track their savings, calculate required contributions, and monitor their progress.
 
@@ -14,7 +14,7 @@ View the deployed application:
 
 https://saveiq-ai-zeta.vercel.app
 
-## ✨ Features
+##  Features
 
 - Create and manage multiple saving goals
 - Set target amount and deadline
@@ -82,11 +82,10 @@ http://localhost:3000
 
 ## 📄 Documents
 
-- Project Documentation
-- System Design
-- Database Schema
-- API Documentation
-- Project Presentation
+### 
+
+[View SaveIQ AI Project Documentation](./docs/samruddhi.skillwallet.pdf)
+
 
 ## 📁 Project Structure
 
@@ -101,7 +100,7 @@ saveiq-ai/
 └── README.md
 ```
 
-## 🤝 Contributing
+
 
 Contributions, suggestions, and improvements are welcome.
 
