@@ -87,8 +87,3 @@ saveiq-ai/
 
 
 
-Contributions, suggestions, and improvements are welcome.
-
-## ⭐ Support
-
-If you find SaveIQ AI useful, consider giving this repository a ⭐ on GitHub.
